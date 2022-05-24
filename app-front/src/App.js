@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { UidContext } from "./components/AppContext";
 import Routes from "./components/Routes";
+// Requêtes BDD
 import axios from "axios";
 
 const App = () => {
