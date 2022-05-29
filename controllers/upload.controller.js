@@ -9,7 +9,7 @@ module.exports.uploadProfil = async (req, res) => {
     // Type fichier valide : jpg, png, jpeg
     if (
       req.file.detectedMimeType !== "image/jpg" &&
-      req.file.detectedMimeType !== "/image/png" &&
+      req.file.detectedMimeType !== "image/png" &&
       req.file.detectedMimeType !== "image/jpeg"
     )
       throw Error("invalid file");
@@ -27,7 +27,7 @@ module.exports.uploadProfil = async (req, res) => {
   await pipeline(
     req.file.stream,
     fs.createWriteStream(
-      `${__dirname}/../client/public/uploads/profil/${fileName}`
+      `${__dirname}/../app-front/public/uploads/profil/${fileName}`
     )
   );
 

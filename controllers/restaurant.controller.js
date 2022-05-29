@@ -41,7 +41,7 @@ module.exports.createRestaurant = async (req, res) => {
     await pipeline(
       req.file.stream,
       fs.createWriteStream(
-        `${__dirname}/../client/public/uploads/restaurants/${fileName}`
+        `${__dirname}/../app-front/public/uploads/restaurants/${fileName}`
       )
     );
   }

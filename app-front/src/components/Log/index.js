@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import SignUpForm from "./SignUpForm";
 import SignInForm from "./SignInForm";
 
+// Affichage des modales selon le click de l'utilisateur
+
 const Log = (props) => {
   const [signUpModal, setSignUpModal] = useState(props.signup);
   const [signInModal, setSignInModal] = useState(props.signin);
