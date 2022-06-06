@@ -13,6 +13,7 @@
     "multer": "^2.0.0-rc.1",
     "nodemon": "^2.0.16",
     "react-router-dom": "^6.3.0",
+    "reactjs-popup": "^2.0.5",
     "validator": "^13.7.0"
   },
   "name": "pim_projet",

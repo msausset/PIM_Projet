@@ -23,11 +23,10 @@ module.exports.createRestaurant = async (req, res) => {
 
   if (req.file !== null) {
     try {
-      // Type fichier valide : jpg, png, jpeg
       if (
-        req.file.detectedMimeType !== "image/jpg" &&
-        req.file.detectedMimeType !== "/image/png" &&
-        req.file.detectedMimeType !== "image/jpeg"
+        req.file.detectedMimeType != "image/jpg" &&
+        req.file.detectedMimeType != "image/png" &&
+        req.file.detectedMimeType != "image/jpeg"
       )
         throw Error("invalid file");
 
@@ -52,7 +51,10 @@ module.exports.createRestaurant = async (req, res) => {
     description: req.body.description,
     location: req.body.location,
     adress: req.body.adress,
-    picture: req.file !== null ? "./uploads/restaurants/" + fileName : "",
+    picture:
+      req.file !== null
+        ? "./uploads/restaurants/" + fileName
+        : "./uploads/restaurants/random-restaurant.png",
     likers: [],
     comments: [],
   });

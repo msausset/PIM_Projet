@@ -9,13 +9,16 @@ const Profil = () => {
   const uid = useContext(UidContext);
 
   return (
-    <div>
+    <div className="profil-page">
       {uid ? (
         <UpdateProfil />
       ) : (
-        <div>
+        <div className="log-container">
           {/* Passage propriétés */}
-          <Log signin={false} singup={true} />
+          <Log signin={false} signup={true} />
+          <div className="img-container">
+            <img src="./img/log.svg" alt="img" />
+          </div>
         </div>
       )}
     </div>

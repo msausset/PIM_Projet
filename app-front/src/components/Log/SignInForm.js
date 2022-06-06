@@ -9,8 +9,8 @@ const SignInForm = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const emailError = document.getElementById("emailError");
-    const passwordError = document.getElementById("passwordError");
+    const emailError = document.querySelector(".email.error");
+    const passwordError = document.querySelector(".password.error");
 
     axios({
       method: "post",
@@ -45,7 +45,7 @@ const SignInForm = () => {
         onChange={(e) => setEmail(e.target.value)}
         value={email}
       />
-      <div id="emailError">{/* Gestion erreur email */}</div>
+      <div className="email error">{/* Gestion erreur email */}</div>
       <br />
       <label htmlFor="password">Mot de passe</label>
       <br />
@@ -56,7 +56,7 @@ const SignInForm = () => {
         onChange={(e) => setPassword(e.target.value)}
         value={password}
       />
-      <div id="passwordError">{/* Gestion erreur mdp */}</div>
+      <div className="password error">{/* Gestion erreur mdp */}</div>
       <br />
       <input type="submit" value="Se connecter" />
     </form>

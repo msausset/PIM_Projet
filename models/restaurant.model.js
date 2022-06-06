@@ -71,3 +71,32 @@ const RestaurantSchema = new mongoose.Schema(
 );
 
 module.exports = mongoose.model("restaurant", RestaurantSchema);
+
+// {
+//   "posterId": "6286979689d25d5a48e9a8f8",
+//   "description": "Le meilleur restaurant de poulet au monde !",
+//   "name": "KFC",
+//   "location": "75001 PARIS",
+//   "adress":"25 rue de la Paix",
+//   "phone": "01.23.27.96.45",
+//   "paymentMethod": ["Carte bancaire", "Espèces", "Tickets restaurant"],
+//   "options": ["Vegan", "Végétarien"],
+//   "typeRestaurant": "Fast-food",
+//   "comments": {
+//       "type": [
+//           {
+//               "commenterId": "6286979689d25d5a48e9a8f8",
+//               "commenterPseudo": "Maxime",
+//               "text": "Nourriture froide."
+//           }
+//       ]
+//   },
+//   "dishes": {
+//       "type": [
+//          {
+//              "name": "Double Krunch Cheese",
+//              "prix": "4,95€"
+//          }
+//       ]
+//   }
+// }

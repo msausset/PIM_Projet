@@ -16,13 +16,13 @@ const SignUpForm = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    const firstNameError = document.getElementById("firstNameError");
-    const lastNameError = document.getElementById("lastNameError");
-    const emailError = document.getElementById("emailError");
-    const pseudoError = document.getElementById("pseudoError");
-    const passwordError = document.getElementById("passwordError");
-    const controlPasswordError = document.getElementById(
-      "controlPasswordError"
+    const firstNameError = document.querySelector(".firstName.error");
+    const lastNameError = document.querySelector(".lastName.error");
+    const emailError = document.querySelector(".email.error");
+    const pseudoError = document.querySelector(".pseudo.error");
+    const passwordError = document.querySelector(".password.error");
+    const controlPasswordError = document.querySelector(
+      ".controlPassword.error"
     );
 
     controlPasswordError.innerHTML = "";
@@ -64,7 +64,9 @@ const SignUpForm = () => {
       {formSubmit ? (
         <>
           <SignInForm />
-          <h4>Enregistrement réussi, veuillez-vous connecter</h4>
+          <h4 className="success">
+            Enregistrement réussi, veuillez-vous connecter
+          </h4>
         </>
       ) : (
         <form action="" onSubmit={handleRegister} id="sign-up-form">
@@ -77,7 +79,7 @@ const SignUpForm = () => {
             onChange={(e) => setFirstName(e.target.value)}
             value={firstName}
           />
-          <div id="firstNameError"></div>
+          <div className="firstName error"></div>
 
           <label htmlFor="">Nom</label>
           <br />
@@ -88,7 +90,7 @@ const SignUpForm = () => {
             onChange={(e) => setLastName(e.target.value)}
             value={lastName}
           />
-          <div id="lastNameError"></div>
+          <div className="lastName error"></div>
 
           <label htmlFor="">Email</label>
           <br />
@@ -99,7 +101,7 @@ const SignUpForm = () => {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
-          <div id="emailError"></div>
+          <div className="email error"></div>
 
           <label htmlFor="">Pseudo</label>
           <br />
@@ -110,7 +112,7 @@ const SignUpForm = () => {
             onChange={(e) => setPseudo(e.target.value)}
             value={pseudo}
           />
-          <div id="pseudoError"></div>
+          <div className="pseudo error"></div>
 
           <label htmlFor="">Mot de passe</label>
           <br />
@@ -121,7 +123,7 @@ const SignUpForm = () => {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
-          <div id="passwordError"></div>
+          <div className="password error"></div>
 
           <label htmlFor="">Confirmer mot de passe</label>
           <br />
@@ -132,7 +134,8 @@ const SignUpForm = () => {
             onChange={(e) => setControlPassword(e.target.value)}
             value={controlPassword}
           />
-          <div id="controlPasswordError"></div>
+          <div className="controlPassword error"></div>
+          <br />
 
           <input type="submit" value="Valider inscription" />
         </form>
